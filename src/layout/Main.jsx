@@ -13,7 +13,7 @@ class Main extends Component {
 
     componentDidMount() {
         console.log(process.env)
-        fetch(`http://www.omdbapi.com/?s=matrix&apikey=${API_KEY}`)
+        fetch(`https://www.omdbapi.com/?s=matrix&apikey=${API_KEY}`)
         .then(response => response.json())
         .then(data => this.setState({movies: data.Search, loading: false}))
     }
@@ -23,7 +23,7 @@ class Main extends Component {
             return
         }
         this.setState({loadig: true})
-        fetch(`http://www.omdbapi.com/?s=${searchValuse}&apikey=${API_KEY}${type !== '' ? `&type=${type}` : ''}`)
+        fetch(`https://www.omdbapi.com/?s=${searchValuse}&apikey=${API_KEY}${type !== '' ? `&type=${type}` : ''}`)
         .then(response => response.json())
         .then(data => this.setState({movies: data.Search, loading: false}))
 
